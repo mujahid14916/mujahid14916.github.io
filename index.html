@@ -237,13 +237,13 @@
             });
             $(document).scroll(function() {
                 var scrollPos = $(window).scrollTop();
-                if (scrollPos > 340) {
+                if (scrollPos > 180) {
                     $('#logo').removeClass('initial-logo-image');
                     $('#logo').addClass('final-logo-image');
                     $('#navigation').removeClass('bg-dark');
                     $('#navigation').removeClass('initial-nav-block');
                     $('#navigation').addClass('final-nav-block');
-                } else if (scrollPos <= 340) {
+                } else if (scrollPos <= 180) {
                     $('#logo').removeClass('final-logo-image');
                     $('#logo').addClass('initial-logo-image');
                     $('#navigation').removeClass('final-nav-block');
