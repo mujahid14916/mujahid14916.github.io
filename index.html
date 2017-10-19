@@ -24,12 +24,10 @@
         }
         header {
             width: 100%;
-            height: 340px;
-            padding: 10px;
+            height: 250px;
+            padding: 25px;
             color: #ffffff;
             background-color: #000000;
-		
-		
         }
         .block {
             text-align: center;
@@ -41,8 +39,8 @@
             
         }
         .initial-logo-image {
-            width: 150px;
-            height: 150px;
+            width: 130px;
+            height: 130px;
             position: relative;
             top: -60px;
             border-radius: 50%;
@@ -50,22 +48,14 @@
             transition: all 0.2s;
         }
         .final-logo-image {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             position: relative;
             top: 0;
             border-radius: 50%;
             border: solid #fff 2px;
             transition: all 0.2s;
         }
-		.Govt-logo-image {
-			width: 150px;
-			height: 150px;
-			position: relative;
-			top: -320px;
-			left: -120px;
-			
-		}
         nav {
             background-color: #000;
             z-index: 1;
@@ -81,18 +71,20 @@
             position: fixed;
             top: 0;
         }
+	.Govt-logo-image {
+	    width: 100px;
+	}
     </style>
     
     <body>
 
         <header>
             <div class="container">
-                
-                <div class="block display-1">
-                    Govt. Sri Krishnarajendra Silver Jubilee Technological Institute
+                <div class="float-left">
+                    <img src="GovLogo.png" class="Govt-logo-image"/>
                 </div>
-				<div>
-                    <img src="GovLogo.png" class="Govt-logo-image" id="Guvlogo"/>
+                <div class="block clearfix h1">
+                    Govt. Sri Krishnarajendra Silver Jubilee Technological Institute
                 </div>
             </div>
         </header>
