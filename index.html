@@ -6,85 +6,60 @@
     </head>
     
     <style type="text/css">
-        #temp {
-            height: 150px;
-            width: 150px;
-            background-color: #000000;
-            border: 10px solid white;
-            border-radius: 50%;
-        }
-        .images {
-            height: 35vh;
-            background: linear-gradient(to right, rgba(50,50,50,0.6), rgba(50,50,50,0.6)),
-                url(image.jpg) no-repeat fixed;
-            background-size: cover;
+        .rolling-images {
+/*            height: 35vh;*/
         }
         hr {
             background-color: #ffffff;
         }
         header {
             width: 100%;
-            height: 250px;
             padding: 25px;
             color: #ffffff;
             background-color: #000000;
         }
-        .block {
-            text-align: center;
-        }
-        #text {
-            background-color: #abcdef;
-            width: 100%;
-            text-align: right;
-            
-        }
-        .initial-logo-image {
-            width: 130px;
-            height: 130px;
-            position: relative;
-            top: -60px;
-            border-radius: 50%;
-            border: solid #fff 5px;
-            transition: all 0.2s;
-        }
-        .final-logo-image {
-            width: 40px;
-            height: 40px;
-            position: relative;
-            top: 0;
-            border-radius: 50%;
-            border: solid #fff 2px;
-            transition: all 0.2s;
-        }
-        nav {
-            background-color: #000;
-            z-index: 1;
-        }
         .initial-nav-block {
-            width: 100%;
-            height: 50px;
             position: static;
         }
         .final-nav-block {
-            height: 50px;
             width: 100%;
             position: fixed;
             top: 0;
+            background-color: #000000;
+            z-index: 1000;
         }
-        .Govt-logo-image {
-	    width: 100px;
-	}
+        .image-set {
+            pointer-events: none;
+        }
+        .article-section {
+            background: linear-gradient(to left, 
+                rgba(53, 58, 64, 0.8), 
+                rgba(53, 58, 64, 0.8)),
+                url(images/image.jpg) no-repeat fixed;
+            background-size: cover;
+        }
     </style>
     
     <body>
 
         <header>
             <div class="container">
-                <div class="float-left">
-                    <img src="GovLogo.png" class="Govt-logo-image"/>
-                </div>
-                <div class="block clearfix h1">
-                    Govt. Sri Krishnarajendra Silver Jubilee Technological Institute
+                <div class="row justify-content-center">
+                    <div class="col col-sm-4 col-md-3 col-lg-2">
+                        <a href="#">
+                            <img src="images/GOK.png" class="img-fluid"/>
+                        </a>
+                    </div>
+                    <div class="col col-sm-12 col-md-6 col-lg-8 align-self-center text-center">
+                        <h2>
+                            Govt. Sri Krishnarajendra Silver Jubilee Technological Institute
+                        </h2>
+                    </div>
+                    <div class="col col-sm-4 col-md-3 col-lg-2">
+                        <a href="#">
+                            <img src="images/CollegeLogo.png" class="img-fluid"/>
+                        </a>
+                    </div>
                 </div>
             </div>
         </header>
@@ -95,21 +70,14 @@
         <nav class="navbar navbar-expand-md navbar-dark bg-dark initial-nav-block"
              id="navigation">
             <div class="container">
-                
-                <div>
-                    <img src="image.jpg" class="initial-logo-image" id="logo"/>
-                </div>
-				
-                <div class="float-left">
-                    <div class="navbar-nav text-center">
-                        <a href="#" class="nav-link nav-item">Home</a>
-                        <a href="#" class="nav-link nav-item">Admission</a>
-                        <a href="#" class="nav-link nav-item">Department</a>
-                        <a href="#" class="nav-link nav-item">Placement</a>
-                        <a href="#" class="nav-link nav-item">Gallery</a>
-                        <a href="#" class="nav-link nav-item">About</a>
-                        <a href="#" class="nav-link nav-item">Contact US</a>
-                    </div>
+                <div class="navbar-nav">
+                    <a href="#" class="nav-link nav-item">Home</a>
+                    <a href="#" class="nav-link nav-item">Admission</a>
+                    <a href="#" class="nav-link nav-item">Department</a>
+                    <a href="#" class="nav-link nav-item">Placement</a>
+                    <a href="#" class="nav-link nav-item">Gallery</a>
+                    <a href="#" class="nav-link nav-item">About</a>
+                    <a href="#" class="nav-link nav-item">Contact US</a>
                 </div>
             </div>
         </nav>
@@ -123,10 +91,45 @@
         
         </section>
         
-        <section class="images">
+        <section class="rolling-images bg-dark">
             <article class="container">
-                <div class="display-1 text-white">
-                    Images
+                <div id="carousel-images" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-images" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-images" data-slide-to="1"></li>
+                        <li data-target="#carousel-images" data-slide-to="2"></li>
+                        <li data-target="#carousel-images" data-slide-to="3"></li>
+                        <li data-target="#carousel-images" data-slide-to="4"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100 img-fluid image-set" src="images/image1.jpg" alt="Slide"/>  
+                            <div class="carousel-caption d-none d-md-block">
+                                <h1>College Gate</h1>
+                                <p>College Gate</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100 img-fluid image-set" src="images/image2.jpg" alt="Slide"/>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100 img-fluid image-set" src="images/image3.jpg" alt="Slide"/>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100 img-fluid image-set" src="images/image4.jpg" alt="Slide"/>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100 img-fluid image-set" src="images/image5.jpg" alt="Slide"/>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carousel-images" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel-images" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
             </article>
         </section>    
@@ -159,7 +162,7 @@
             </div>
         </section>
         
-        <section class="bg-dark text-white">
+        <section class="bg-dark text-white article-section">
             <div class="container">
                 <div class="row">
                     <main class="col-sm-6 col-lg-3 p-3 text-justify">
@@ -232,26 +235,23 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script> 
         
         <script type="text/javascript">
-            $(function() {
-                console.log("Page Loading Completed");
-            });
             $(document).scroll(function() {
                 var scrollPos = $(window).scrollTop();
                 if (scrollPos > 180) {
-                    $('#logo').removeClass('initial-logo-image');
-                    $('#logo').addClass('final-logo-image');
                     $('#navigation').removeClass('bg-dark');
                     $('#navigation').removeClass('initial-nav-block');
                     $('#navigation').addClass('final-nav-block');
                 } else if (scrollPos <= 180) {
-                    $('#logo').removeClass('final-logo-image');
-                    $('#logo').addClass('initial-logo-image');
                     $('#navigation').removeClass('final-nav-block');
                     $('#navigation').addClass('initial-nav-block');
                     $('#navigation').addClass('bg-dark');
                 }
             });
+            $(function() {
+                $(".carousel").carousel({
+                    interval: 2000
+                }); 
+            });
         </script>
-        
     </body>
 </html>
