@@ -1,0 +1,42 @@
+hr {
+    background-color: #ffffff;
+}
+header {
+    width: 100%;
+    padding: 25px;
+    color: #ffffff;
+    background-color: #000000;
+}
+.initial-nav-block {
+    position: static;
+}
+.final-nav-block {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: #000000;
+    z-index: 1000;
+}
+.image-set {
+    pointer-events: none;
+}
+.article-section {
+    background: linear-gradient(to left, 
+        rgba(53, 58, 64, 0.8), 
+        rgba(53, 58, 64, 0.8)),
+        url(../images/image.jpg) no-repeat fixed;
+    background-size: cover;
+}
+
+
+@media only screen and (max-width: 576px) {
+    header h2 {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    header h2 {
+        font-size: 8px;
+    }
+}
