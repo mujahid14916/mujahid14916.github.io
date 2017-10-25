@@ -2,61 +2,28 @@
 <html lang="en">
     <head>
         <title>Sample Page</title>
-         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"> 
+<!--         <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/styles.css"/>
     </head>
-    
-    <style type="text/css">
-        .rolling-images {
-/*            height: 35vh;*/
-        }
-        hr {
-            background-color: #ffffff;
-        }
-        header {
-            width: 100%;
-            padding: 25px;
-            color: #ffffff;
-            background-color: #000000;
-        }
-        .initial-nav-block {
-            position: static;
-        }
-        .final-nav-block {
-            width: 100%;
-            position: fixed;
-            top: 0;
-            background-color: #000000;
-            z-index: 1000;
-        }
-        .image-set {
-            pointer-events: none;
-        }
-        .article-section {
-            background: linear-gradient(to left, 
-                rgba(53, 58, 64, 0.8), 
-                rgba(53, 58, 64, 0.8)),
-                url(images/image.jpg) no-repeat fixed;
-            background-size: cover;
-        }
-    </style>
     
     <body>
 
         <header>
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col col-sm-4 col-md-3 col-lg-2">
-                        <a href="#">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col col-sm-3 col-md-3 col-lg-2">
+                        <a href="index.html">
                             <img src="images/GOK.png" class="img-fluid"/>
                         </a>
                     </div>
-                    <div class="col col-sm-12 col-md-6 col-lg-8 align-self-center text-center">
+                    <div class="col col-sm-6 col-md-6 col-lg-8 text-center">
                         <h2>
                             Govt. Sri Krishnarajendra Silver Jubilee Technological Institute
                         </h2>
                     </div>
-                    <div class="col col-sm-4 col-md-3 col-lg-2">
-                        <a href="#">
+                    <div class="col col-sm-3 col-md-3 col-lg-2">
+                        <a href="index.html">
                             <img src="images/CollegeLogo.png" class="img-fluid"/>
                         </a>
                     </div>
@@ -70,14 +37,29 @@
         <nav class="navbar navbar-expand-md navbar-dark bg-dark initial-nav-block"
              id="navigation">
             <div class="container">
-                <div class="navbar-nav">
-                    <a href="#" class="nav-link nav-item">Home</a>
-                    <a href="#" class="nav-link nav-item">Admission</a>
-                    <a href="#" class="nav-link nav-item">Department</a>
-                    <a href="#" class="nav-link nav-item">Placement</a>
-                    <a href="#" class="nav-link nav-item">Gallery</a>
-                    <a href="#" class="nav-link nav-item">About</a>
-                    <a href="#" class="nav-link nav-item">Contact US</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle Navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navContent">
+                    <div class="navbar-nav">
+                        <a class="nav-link nav-item" href="index.html">Home</a>
+                        <a class="nav-link nav-item" href="#">Admission</a>
+                        
+                        <div class="dropdown">
+                            <a class="nav-link nav-item dropdown-toggle" href="#" id="navdropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Department</a>
+                            <div class="dropdown-menu" aria-labelledby="navdropdown">
+                                <a class="dropdown-item" href="dept/cs_dept.html">Computer Science</a>
+                                <a class="dropdown-item" href="dept/ec_dept.html">Electronics</a>
+                                <a class="dropdown-item" href="dept/cv_dept.html">Civil</a>
+                                <a class="dropdown-item" href="dept/sk_tx_dept.html">Silk &amp; Textile</a>
+                            </div>
+                        </div>
+                        
+                        <a class="nav-link nav-item" href="#">Placement</a>
+                        <a class="nav-link nav-item" href="#">Gallery</a>
+                        <a class="nav-link nav-item" href="#">About</a>
+                        <a class="nav-link nav-item" href="#">Contact US</a>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -103,11 +85,7 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="d-block w-100 img-fluid image-set" src="images/image1.jpg" alt="Slide"/>  
-                            <div class="carousel-caption d-none d-md-block">
-                                <h1>College Gate</h1>
-                                <p>College Gate</p>
-                            </div>
+                            <img class="d-block w-100 img-fluid image-set" src="images/image1.jpg" alt="Slide"/> 
                         </div>
                         <div class="carousel-item">
                             <img class="d-block w-100 img-fluid image-set" src="images/image2.jpg" alt="Slide"/>
@@ -236,15 +214,17 @@
         
         <script type="text/javascript">
             $(document).scroll(function() {
-                var scrollPos = $(window).scrollTop();
-                if (scrollPos > 180) {
-                    $('#navigation').removeClass('bg-dark');
-                    $('#navigation').removeClass('initial-nav-block');
-                    $('#navigation').addClass('final-nav-block');
-                } else if (scrollPos <= 180) {
-                    $('#navigation').removeClass('final-nav-block');
-                    $('#navigation').addClass('initial-nav-block');
-                    $('#navigation').addClass('bg-dark');
+                if (window.innerWidth >= 768) {
+                    var scrollPos = $(window).scrollTop();
+                    if (scrollPos > 180) {
+                        $('#navigation').removeClass('bg-dark');
+                        $('#navigation').removeClass('initial-nav-block');
+                        $('#navigation').addClass('final-nav-block');
+                    } else if (scrollPos <= 180) {
+                        $('#navigation').removeClass('final-nav-block');
+                        $('#navigation').addClass('initial-nav-block');
+                        $('#navigation').addClass('bg-dark');
+                    }
                 }
             });
             $(function() {
@@ -253,5 +233,6 @@
                 }); 
             });
         </script>
+        
     </body>
 </html>
