@@ -16,6 +16,7 @@ header {
     top: 0;
     background-color: #000000;
     z-index: 1000;
+    height: 30px;
 }
 .image-set {
     pointer-events: none;
